@@ -46,7 +46,7 @@ const CheckboxContainer = styled.div`
   cursor: pointer;
   display: inline-block;
   vertical-align: middle;
-  padding: 8px;
+  margin: 0 0.5em 0 1em;
 `
 
 export default ({ className, checked, label, ...props }) => (

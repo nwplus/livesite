@@ -40,7 +40,7 @@ export default ({ name, handleLogout }) => (
     )}
     {name && (
       <Greeting>
-        <span role="img" aria-label="tongue sticking out emoji">
+        <span role="img" aria-label="tongue-sticking-out emoji">
           &#128540;
         </span>{' '}
         Hi, {name}

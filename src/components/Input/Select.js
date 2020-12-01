@@ -11,7 +11,7 @@ const SelectWrapper = styled.span`
   border: 2px solid ${p => p.theme.colors.default};
   border-radius: 8px;
   padding: 8px 24px 8px 16px;
-  margin: 8px;
+  margin: 1em 0 1em 1em;
   ${p =>
     p.disabled
       ? `
