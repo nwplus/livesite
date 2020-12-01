@@ -15,12 +15,12 @@ const dropdownWidth = {
 const sharedStyle = css`
   .react-select__control {
     background-color: transparent;
-    margin: 1em 0 2.5em 1em;
+    margin: 0 0 2.5em 0;
     border: 2px solid;
     border-radius: 7px;
     box-shadow: none;
     max-width: ${p => (p.isSearchable ? dropdownWidth.searchable : dropdownWidth.normal)};
-    // height: 48px;
+    height: 40px;
     border-color: ${p => (p.isValid ? p.theme.colors.default : p.theme.colors.warning)};
     padding-right: 17px;
     padding-left: 7px;
@@ -111,7 +111,7 @@ const StyledErrorMsg = styled.div`
   font-weight: 400;
   font-size: 16px;
   position: absolute;
-  top: 56px;
+  top: 3em;
   text-align: left;
 `
 
