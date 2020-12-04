@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { H1, H2, H3, P, A, QuestionHeading } from '../components/Typography'
 import { Card } from '../components/Common.js'
 import { Button, TextInput, TextArea, Checkbox, Select, Dropdown } from '../components/Input'
@@ -55,7 +55,7 @@ export default () => {
   })
   const [textArea1Value, setTextArea1Value] = useState('')
   const [textArea2Value, setTextArea2Value] = useState('')
-  const [hint, setHint] = useState()
+  const [file, setFile] = useState({ resume: undefined })
   const [progress, setProgress] = useState(0)
   const [isLoading, setIsLoading] = useState(false)
   const ResumeContainer = styled.div`
@@ -65,6 +65,9 @@ export default () => {
   const StyledQuestionHeading = styled(QuestionHeading)`
     margin-right: 9em;
   `
+  useEffect(() => {
+    console.log(file)
+  }, [file])
   return (
     <>
       <Button color="secondary" width="flex" href={`javascript:(${toggleTheme})()`}>
@@ -316,8 +319,14 @@ export default () => {
       <ResumeContainer>
         <StyledQuestionHeading>resume</StyledQuestionHeading>
         <ResumeUploadBtn
-          onChange={e => setHint(e.target.value)}
-          hint={hint}
+          onChange={e => {
+            if (e.target.files[0]) {
+              setFile({ resume: e.target.files[0] })
+            } else {
+              setFile({ resume: null })
+            }
+          }}
+          file={file.resume}
           errorMsg="Please upload your resume"
         />
       </ResumeContainer>

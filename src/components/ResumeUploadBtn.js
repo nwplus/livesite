@@ -19,7 +19,7 @@ const UploadButton = ({ handleClick }) => {
   )
 }
 
-export default ({ onChange, hint, errorMsg }) => {
+export default ({ onChange, file, errorMsg }) => {
   const inputFile = useRef()
 
   const handleClick = () => {
@@ -30,9 +30,9 @@ export default ({ onChange, hint, errorMsg }) => {
     <ResumeContainer>
       <ResumeFile inputFile={inputFile} onChange={onChange} />
       <UploadButton handleClick={handleClick} />
-      {hint !== undefined &&
-        (hint ? (
-          <span>{hint.match(/[/\\]([\w\d\s.\-()]+)$/)[1]}</span>
+      {file !== undefined &&
+        (file.name ? (
+          <span>{file.name}</span>
         ) : (
           <TextInputLikeErrorMsg>{errorMsg}</TextInputLikeErrorMsg>
         ))}
